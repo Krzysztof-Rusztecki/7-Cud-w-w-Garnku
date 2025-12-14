@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta name="author" content="Krzysztof Rusztecki">
+    <meta name="keywords" content="Zupy,Kuchnia,Kapuśniak,Barszcz,Żurek,Rosół">
+    <meta name="description" content="Ranking najlepszych zup">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7 Cudów w Garku - Najlepsze Polskie Zupy</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body id="Galeria">
+
+<menu>
+  <a href="index.html">Strona Główna</a>
+    <a class="active" href="Galeria.html">Galeria</a>
+</menu>
+
+
+<div class="content">
+   <h2>Galeria Zdjęć</h2>
+
+<div class="container">
+  <div class="mySlides">
+    <div class="numbertext">1 / 7</div>
+    <img src="obrazy/szczawiowa.jpg">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 7</div>
+    <img src="obrazy/kapuśniak saker.jpg">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 7</div>
+    <img src="obrazy/barszcz.jpg">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">4 / 7</div>
+    <img src="obrazy/zupa-ogorkowa-.jpg">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 7</div>
+    <img src="obrazy/żurek.jpg">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">6 / 7</div>
+    <img src="obrazy/pomidorowa.jpg">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">7 / 7</div>
+    <img src="obrazy/rosołek.jpg">
+  </div>
+    
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="obrazy/szczawiowaM.jpg" onclick="currentSlide(1)" alt="Zupa Szczawiowa">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="obrazy/kapuśniakM.jpg" onclick="currentSlide(2)" alt="Kapuśniak">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="obrazy/barszczM.jpg" onclick="currentSlide(3)" alt="Barszcz Czerwony">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="obrazy/zupa-ogorkowaM.jpg" onclick="currentSlide(4)" alt="Zupa Ogórkowa">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="obrazy/żurekM.jpg" onclick="currentSlide(5)" alt="Barszcz Biały">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="obrazy/pomidorowaM.jpg" onclick="currentSlide(6)" alt="Zupa Pomidorowa">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="obrazy/rosołekM.jpg" onclick="currentSlide(7)" alt="Rosół">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+</div>
+</body>
+</html>
